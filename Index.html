@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <title>Form Absensi</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="alertContainer" class="alert-container"></div>
+  <h1>Form Absensi</h1>
+  <form name="submit-to-google-sheet">
+    <div class="form-group">
+      <label for="tanggal">Tanggal:</label>
+      <input type="date" id="tanggal" name="tanggal" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nama">Nama:</label>
+      <select id="nama" name="nama" required>
+        <option value="">Pilih Nama</option>
+        <option value="Ardian">Ardian</option>
+        <option value="Alim">Alim</option>
+        <option value="Febri">Febri</option>
+        <option value="Robi">Robi</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="kode">Kode:</label>
+      <input type="text" id="kode" name="kode" minlength="4" maxlength="4" placeholder="4-karakter" required>
+    </div>
+
+    <div class="form-group">
+      <label for="kehadiran">Kehadiran:</label>
+      <label><input type="radio" name="kehadiran" value="hadir"> Hadir</label>
+      <label><input type="radio" name="kehadiran" value="sakit"> Sakit</label>
+      <label><input type="radio" name="kehadiran" value="izin"> Izin</label>
+    </div>
+
+    <div id="jamInputContainer" class="jam-input">
+      <div class="form-group">
+        <label for="masuk">Masuk:</label>
+        <input type="text" id="masuk" name="masuk" pattern="[0-9:]*" minlength="5" maxlength="5" placeholder="Format hh:mm" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pulang">Pulang:</label>
+        <input type="text" id="pulang" name="pulang" pattern="[0-9:]*" minlength="5" maxlength="5" placeholder="Format hh:mm" required>
+      </div>
+    </div>
+    <input type="hidden" id="jamEfektif" name="jam_efektif" value="">
+
+    <button type="submit" id="submitBtn" class="btn-submit">Submit</button>
+  </form>
+  
+  <script src="script.js"></script>
+</body>
+</html>
